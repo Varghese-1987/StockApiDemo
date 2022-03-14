@@ -42,6 +42,8 @@ namespace StockApi.UI.Installers
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddScoped<IStockService, StockService>();
+
+           
         }
     }
 }

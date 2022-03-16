@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using Serilog;
 using StockApi.Persistance.Context;
 
 namespace StockApi.UI.Installers
@@ -12,6 +12,8 @@ namespace StockApi.UI.Installers
 
             applicationBuilder.UseHttpsRedirection();
             applicationBuilder.UseStaticFiles();
+
+            applicationBuilder.UseSerilogRequestLogging();
 
             var swaggerOptions = new SwaggerConfig.SwaggerConfig();
             applicationBuilder.Configuration.GetSection(nameof(SwaggerConfig)).Bind(swaggerOptions);

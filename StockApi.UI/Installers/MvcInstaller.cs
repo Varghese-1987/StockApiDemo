@@ -23,7 +23,7 @@ namespace StockApi.UI.Installers
             {
                 config.SwaggerDoc("v1", new OpenApiInfo
                 {
-                    Title = "Test Swagger API",
+                    Title = "Stock API",
                     Version = "v1"
                 }
                 );

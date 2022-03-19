@@ -21,7 +21,6 @@ namespace StockApi.UI.Controllers
         {
             _logger.LogInformation("Getting stockId {stockId}",stockId);
             var stock=stockService.GetStockById(stockId);
-
             return Ok(stock);
         }
 

@@ -1,4 +1,4 @@
-namespace StockApi.UI.Models
+﻿namespace StockApi.UI.Models
 {
     public class ErrorViewModel
     {

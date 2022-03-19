@@ -4,8 +4,8 @@ namespace StockApi.DataAccess.Services
 {
     public interface IStockService
     {
-        StockVM GetStockById (int id);
+        Task<StockVM> GetStockById (int id);
 
-        StockVM CreateStock(StockVM stock);
+        Task<StockVM> CreateStock(StockVM stock);
     }
 }

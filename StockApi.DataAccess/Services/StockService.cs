@@ -2,6 +2,9 @@
 using StockApi.Domain.Entities.StockEnities;
 using StockApi.Persistance.Context;
 
+using Microsoft.EntityFrameworkCore;
+
+
 namespace StockApi.DataAccess.Services
 {
     public class StockService : IStockService
@@ -12,7 +15,7 @@ namespace StockApi.DataAccess.Services
         {
             this._coreDbCOntext = coreDbContext;
         }
-        public StockVM CreateStock(StockVM stockVM)
+        public async Task<StockVM> CreateStock(StockVM stockVM)
         {
             var stock = new Stock();
 
@@ -21,9 +24,9 @@ namespace StockApi.DataAccess.Services
             stock.Symbol = stockVM.Symbol;
             stock.Company = stockVM.Company;
             _coreDbCOntext.Stocks.Add(stock);
-            createdStockId = _coreDbCOntext.SaveChanges();
+            createdStockId = await _coreDbCOntext.SaveChangesAsync();
 
-            stock = _coreDbCOntext.Stocks.FirstOrDefault(x => x.Id == stock.Id);
+            stock =await _coreDbCOntext.Stocks.FirstOrDefaultAsync(x => x.Id == stock.Id);
 
             if (createdStockId > 0 &&stock !=null)
             {
@@ -32,9 +35,9 @@ namespace StockApi.DataAccess.Services
             return new StockVM();
         }
 
-        public StockVM GetStockById(int id)
+        public async  Task<StockVM> GetStockById(int id)
         {
-            Stock? stock = _coreDbCOntext.Stocks.FirstOrDefault(x => x.Id == id);
+            Stock? stock = await _coreDbCOntext.Stocks.FirstOrDefaultAsync(x => x.Id == id);
             if(stock != null)
             {
                 return new StockVM(stock);

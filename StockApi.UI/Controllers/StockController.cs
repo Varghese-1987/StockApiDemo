@@ -17,17 +17,18 @@ namespace StockApi.UI.Controllers
         }
 
         [HttpGet(ApiRoutes.StockApiRoutes.GetStock)]
-        public IActionResult Get(int stockId)
+        public async Task<IActionResult> Get(int stockId)
         {
             _logger.LogInformation("Getting stockId {stockId}",stockId);
-            var stock=stockService.GetStockById(stockId);
+
+            var stock= await stockService.GetStockById(stockId);
             return Ok(stock);
         }
 
         [HttpPost(ApiRoutes.StockApiRoutes.CreateStock)]
-        public IActionResult Create([Bind("Symbol","Company")] StockVM stockVM)
+        public async  Task<IActionResult> Create([Bind("Symbol","Company")] StockVM stockVM)
         {
-            var stock = stockService.CreateStock(stockVM);
+            var stock = await stockService.CreateStock(stockVM);
 
             return Ok(stock);
         }

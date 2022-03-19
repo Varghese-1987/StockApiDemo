@@ -1,4 +1,4 @@
-name: Continous Integration and Deployment for Stock Rest Api Project
+name: CI/CD for Stock Api Project
 on:
   push:
     branches:

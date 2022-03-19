@@ -1,16 +1,17 @@
 using Serilog;
 using StockApi.UI.Installers;
 
-IConfiguration configuration= new ConfigurationBuilder()
-    .AddJsonFile("appsettings.json")
-    .Build();
-
-Log.Logger=new LoggerConfiguration()
-    .ReadFrom.Configuration(configuration)
-    .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.UseSerilog();
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+builder.Host.UseSerilog((context, services, configuration) =>
+{
+    configuration.ReadFrom.Configuration(context.Configuration)
+    .ReadFrom.Services(services)
+    .Enrich.FromLogContext();
+  
+});
 
 
 builder.Services.InstallServicesInApplication(builder.Configuration);

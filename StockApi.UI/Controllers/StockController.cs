@@ -9,14 +9,17 @@ namespace StockApi.UI.Controllers
     public class StockController : Controller
     {
         private readonly IStockService stockService;
-        public StockController(IStockService stockService)
+        private readonly ILogger<StockController> _logger;
+        public StockController(IStockService stockService,ILogger<StockController> logger)
         {
             this.stockService = stockService;
+            this._logger = logger;
         }
 
         [HttpGet(ApiRoutes.StockApiRoutes.GetStock)]
         public IActionResult Get(int stockId)
         {
+            _logger.LogInformation("Getting stockId {stockId}",stockId);
             var stock=stockService.GetStockById(stockId);
 
             return Ok(stock);

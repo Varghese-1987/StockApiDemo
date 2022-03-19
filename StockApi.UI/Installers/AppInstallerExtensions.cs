@@ -13,7 +13,10 @@ namespace StockApi.UI.Installers
             applicationBuilder.UseHttpsRedirection();
             applicationBuilder.UseStaticFiles();
 
-            applicationBuilder.UseSerilogRequestLogging();
+            applicationBuilder.UseSerilogRequestLogging(configuration =>
+            {
+                configuration.MessageTemplate = "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.000}ms";
+            });
 
             var swaggerOptions = new SwaggerConfig.SwaggerConfig();
             applicationBuilder.Configuration.GetSection(nameof(SwaggerConfig)).Bind(swaggerOptions);

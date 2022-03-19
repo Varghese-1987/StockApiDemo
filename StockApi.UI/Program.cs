@@ -1,6 +1,9 @@
 using Serilog;
+using StockApi.UI.Extensions;
 using StockApi.UI.Installers;
 
+Log.Logger = new LoggerConfiguration()
+    .CreateBootstrapLogger();
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders();
@@ -17,5 +20,5 @@ builder.Host.UseSerilog((context, services, configuration) =>
 builder.Services.InstallServicesInApplication(builder.Configuration);
 
 var app = builder.Build();
-app.ConfigureApplicationBuilder();
+app.ConfigureApplicationBuilder(Log.Logger);
 

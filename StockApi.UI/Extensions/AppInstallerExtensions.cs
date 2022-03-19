@@ -2,13 +2,13 @@
 using Serilog;
 using StockApi.Persistance.Context;
 
-namespace StockApi.UI.Installers
+namespace StockApi.UI.Extensions
 {
     public static class AppInstallerExtensions
     {
-        public static void ConfigureApplicationBuilder( this WebApplication applicationBuilder)
+        public static void ConfigureApplicationBuilder(this WebApplication applicationBuilder, Serilog.ILogger logger)
         {
-           
+            applicationBuilder.ConfigureExceptionHandler(logger);
 
             applicationBuilder.UseHttpsRedirection();
             applicationBuilder.UseStaticFiles();

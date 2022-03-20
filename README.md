@@ -10,13 +10,13 @@ A simple web api project build on .net 6
 - `git clone https://github.com/Varghese-1987/StockApiDemo.git`
 - Once cloned make sure to change the appsettings.json file to point to the correct Sql Server and update the credentials as well as shown below
 
-![](images/App-Settings.png)
+![](readme-images/App-Settings.png)
 
 - Above step is required because as soon as the application launches it will try to run the EF core migrations and create the relevant tables for the application.
 - Once the application runs successfully , you should be seeing the following page
 - You may have to create some data with the post endpoint as there is no seed data by default.
 
-![](images/Home-Page-Stock-Api.png)
+![](readme-images/Home-Page-Stock-Api.png)
 
 - Click on the Stock Api link the home page to naviagte to the swagger doc of the project api's
 
@@ -24,7 +24,7 @@ A simple web api project build on .net 6
 
 - The project dependencies are structured as shown in the diagram below
 
-![](images/Stock-Api-Dependency-Diagram.png)
+![](readme-images/Stock-Api-Dependency-Diagram.png)
 
 # Application Configuration Breakdown
 
@@ -36,16 +36,16 @@ A simple web api project build on .net 6
 - First thing in this file is the configuration of third party logging library Serilog to provide structured logging
 - Second is the configuration of services which is abstracted out to an InstallerExtensions class as shown below
 
-![](images/Service-Configuration-main.png)
-![](images/Service-Configuration.png)
+![](readme-images/Service-Configuration-main.png)
+![](readme-images/Service-Configuration.png)
 
 - Third is the configuration of middleware which is also abstracted out to an AppInstallerExtensions.cs as shown below
 
-![](images/Middleware-Configuration.png)
+![](readme-images/Middleware-Configuration.png)
 
 - Exception middleware configuration is also abstracted out to ExceptionMiddlewareExtension.cs as shown below
 
-![](images/Exception-Middleware-Configuration.png)
+![](readme-images/Exception-Middleware-Configuration.png)
 
 ## Other Main Configurations in StockApi.UI
 - Swagger configuration

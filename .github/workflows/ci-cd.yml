@@ -1,6 +1,10 @@
 name: CI/CD for Stock Api Project
 on:
   push:
+    paths-ignore:
+      - ".github/**"
+      - "readme-images/**"
+      - "README.md"
     branches:
       - master
 jobs:

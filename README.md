@@ -1,5 +1,7 @@
 # StockApiDemo
 
+[![CI/CD for Stock Api Project](https://github.com/Varghese-1987/StockApiDemo/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Varghese-1987/StockApiDemo/actions/workflows/ci-cd.yml)
+
 A simple web api project build on .net 6
 
 # How To Use
@@ -8,7 +10,7 @@ A simple web api project build on .net 6
 - ***Requires MS SQL Server on your local machine***
 
 - `git clone https://github.com/Varghese-1987/StockApiDemo.git`
-- Once cloned make sure to change the appsettings.json file to point to the correct Sql Server and update the credentials as well as shown below
+- Once cloned make sure to change the appsettings.json file to point to the correct Sql Server and update the credentials as shown below
 
 ![](readme-images/App-Settings.png)
 
@@ -18,7 +20,7 @@ A simple web api project build on .net 6
 
 ![](readme-images/Home-Page-Stock-Api.png)
 
-- Click on the Stock Api link the home page to naviagte to the swagger doc of the project api's
+- Click on the Stock Api link in the home page to navigate to the swagger doc of the project api's
 
 # Project Dependency Diagram
 

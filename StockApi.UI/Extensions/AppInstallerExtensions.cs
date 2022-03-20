@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using StockApi.Persistance.Context;
+
+using Microsoft.EntityFrameworkCore;
 using Serilog;
-using StockApi.Persistance.Context;
 
 namespace StockApi.UI.Extensions
 {

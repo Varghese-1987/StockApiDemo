@@ -1,6 +1,7 @@
-using Serilog;
 using StockApi.UI.Extensions;
 using StockApi.UI.Installers;
+
+using Serilog;
 
 Log.Logger = new LoggerConfiguration()
     .CreateBootstrapLogger();

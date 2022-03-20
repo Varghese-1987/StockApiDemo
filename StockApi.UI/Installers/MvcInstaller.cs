@@ -1,6 +1,7 @@
-﻿using FluentValidation.AspNetCore;
+﻿using StockApi.UI.Filters;
+
+using FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
-using StockApi.UI.Filters;
 using System.Reflection;
 
 namespace StockApi.UI.Installers

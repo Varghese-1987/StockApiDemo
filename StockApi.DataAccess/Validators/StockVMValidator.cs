@@ -1,5 +1,6 @@
-﻿using FluentValidation;
-using StockApi.DataAccess.ViewModels;
+﻿using StockApi.DataAccess.ViewModels;
+
+using FluentValidation;
 
 namespace StockApi.DataAccess.Validators
 {

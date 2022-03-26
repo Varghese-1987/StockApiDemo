@@ -60,6 +60,7 @@ A simple web api project build on .net 6
 - Core Api Buisness logic resides inside this project
 - Leverages on the FluentValidator library to implement validation of ViewModels
 - This project has a dependency on StockApi.Domain and StockApi.Persistance projects
+- Added retry logic for Api's using third party library Polly
 
 ## Main Configurations in StockApi.Persistance
 - DbContext configuration resides in this project
